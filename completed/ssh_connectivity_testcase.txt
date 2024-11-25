@@ -1,0 +1,25 @@
+Scenario:
+Testing SSH connectivity using Password and Key based auth
+
+Prerequisite:
+* Make sure the IP or hostname is reachable through the network. E.g if any VPN is needed to access the system 
+* Ensure test system is pingable.
+* SSH need to be installed and running on test system. 
+* For key-based authentication, user must had generated the ssh key pair.
+* For password authentication, user must have the correct password to provide at prompt
+* Clear the known_host file to avoid any possible issue in case some modification was made to the host that is relevant to ssh connectivity
+
+Procedure:
+* Open terminal
+* Attempt to connect to server providing the test user
+* Specify the correct ssh command by specifying any additional parameters such as IP/hostname, port to connect or even ciphers/algorithms to be used for the connections. 
+* Provide either password or key to authenticate with server. If key based auth, specify identity file or passphrase if needed. 
+* Terminate SSH session
+
+Expected results:
+* Pass criteria - User is able to access to the system with the specified parameters
+* Fail criteria - User is unable to connect to remote system with the provided key or password
+
+Tools:
+* Server or Workstation with ssh access enabled
+* SSH client
